@@ -1,0 +1,5 @@
+{
+  "name": "Blank Diary Framework",
+  "description": "A clean, responsive, single-page diary framework using vanilla HTML, CSS, and JavaScript with a full-screen background container.",
+  "requestFramePermissions": []
+}

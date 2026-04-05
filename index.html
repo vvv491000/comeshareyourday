@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diary Framework</title>
+    <script async src="https://tally.so/widgets/embed.js"></script>  </head>
+  <body>
+    <!-- 全屏背景图片容器 -->
+    <div id="app-background"></div>
+
+    <!-- 主内容容器 -->
+    <main id="app-container">
+      <!-- 页面部分将由 JavaScript 动态切换 -->
+      <section id="page-home" class="page active">
+        <!-- 左侧装饰图片 -->
+        <div class="left-side-container">
+          <img src="/src/图片素材/youxiji.png" alt="Left Decoration" class="left-side-img" referrerPolicy="no-referrer">
+          <!-- 提示：请将上面的 src 替换为您上传的左侧图片路径 -->
+        </div>
+
+        <!-- 右侧装饰图片 -->
+        <div class="right-side-container">
+          <img src="/src/图片素材/biaoti.png" alt="Right Decoration" class="right-side-img" referrerPolicy="no-referrer">
+          <!-- 提示：请将上面的 src 替换为您上传的右侧图片路径 -->
+        </div>
+
+        <!-- 右侧浮动图片 -->
+        <div class="right-float-container" onclick="openDraggableModal('modal-right-side')">
+          <img src="/src/图片素材/shouji.png" alt="Floating Image" class="floating-img" id="right-float-img" referrerPolicy="no-referrer">
+          <!-- 提示：将上面的 src 替换为您上传的图片路径，例如 src="/src/图片素材/right_side.png" -->
+        </div>
+
+        <!-- 左上角浮动图片 -->
+        <div class="top-left-float-container" onclick="openDraggableModal('modal-top-left')">
+          <img src="/src/图片素材/team.png" alt="Top Left Floating Image" class="floating-img-top-left" id="top-left-float-img" referrerPolicy="no-referrer">
+          <!-- 提示：请将上面的 src 替换为您上传的左上角图片路径 -->
+        </div>
+
+        <!-- 底部按钮区域 -->
+        <!-- Come On! 按钮 -->
+        <div class="come-on-container">
+          <a href="#tally-open=yPxLG8&tally-layout=modal&tally-width=377&tally-emoji-text=💞&tally-emoji-animation=heart-beat" id="tally-btn-link" class="bottom-btn">
+            <img src="/src/图片素材/anniu.png" alt="Come On!" class="tally-img" referrerPolicy="no-referrer">
+          </a>
+        </div>
+
+        <!-- Messages 按钮 (请在下方 img 标签的 src 中替换为您上传的图片路径) -->
+        <div class="messages-container">
+          <button class="bottom-btn" onclick="openDraggableModal('modal-messages')">
+            <img src="/src/图片素材/mess.png" alt="Messages" class="tally-img" id="messages-btn-img" referrerPolicy="no-referrer">
+            <!-- 提示：将上面的 src="https://picsum.photos/..." 替换为您的图片路径，例如 src="/src/图片素材/your_image.png" -->
+          </button>
+        </div>
+
+        <!-- Fotos 按钮 (请在下方 img 标签的 src 中替换为您上传的图片路径) -->
+        <div class="fotos-container">
+          <button class="bottom-btn" onclick="openDraggableModal('modal-fotos')">
+            <img src="/src/图片素材/pho.png" alt="Fotos" class="tally-img" id="fotos-btn-img" referrerPolicy="no-referrer">
+            <!-- 提示：将上面的 src="https://picsum.photos/..." 替换为您的图片路径，例如 src="/src/图片素材/your_image.png" -->
+          </button>
+        </div>
+
+        <!-- 右下角装饰图片 -->
+        <div class="bottom-right-container">
+          <img src="/src/图片素材/bunnies.png" alt="Bottom Right Decoration" class="bottom-right-img" referrerPolicy="no-referrer">
+        </div>
+      </section>
+
+      <section id="page-entry" class="page">
+        <!-- 日记详情/编辑页预留 -->
+      </section>
+
+      <section id="page-list" class="page">
+        <!-- 日记列表页预留 -->
+      </section>
+    </main>
+
+    <!-- 弹窗结构 (原有 Tally 弹窗由脚本控制，这里是自定义弹窗) -->
+    <div id="modal-diary" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeModal('modal-diary')">&times;</span>
+        <div class="modal-body">
+          <h3>新日记</h3>
+          <textarea placeholder="今天发生了什么？" class="diary-input"></textarea>
+          <button class="save-button">保存</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 可挪动弹窗 1: Messages -->
+    <div id="modal-messages" class="draggable-modal">
+      <div class="draggable-header">
+        <span>Messages</span>
+        <span class="close-btn-small" onclick="closeDraggableModal('modal-messages')">&times;</span>
+      </div>
+      <div class="draggable-body">
+        <div class="rectangle-list">
+          <!-- 五张矩形图片，点击后打开各自的弹窗 -->
+          <img src="/src/图片素材/hanni.png" alt="msg1" onclick="openDraggableModal('modal-msg-1')" referrerPolicy="no-referrer">
+          <img src="/src/图片素材/hearin.png" alt="msg2" onclick="openDraggableModal('modal-msg-2')" referrerPolicy="no-referrer">
+          <img src="/src/图片素材/hyein.png" alt="msg3" onclick="openDraggableModal('modal-msg-3')" referrerPolicy="no-referrer">
+          <img src="/src/图片素材/dani.png" alt="msg4" onclick="openDraggableModal('modal-msg-4')" referrerPolicy="no-referrer">
+          <img src="/src/图片素材/minji.png" alt="msg5" onclick="openDraggableModal('modal-msg-5')" referrerPolicy="no-referrer">
+        </div>
+      </div>
+    </div>
+
+    <!-- 可挪动弹窗 2: Fotos -->
+    <div id="modal-fotos" class="draggable-modal">
+      <div class="draggable-header">
+        <span>Fotos</span>
+        <span class="close-btn-small" onclick="closeDraggableModal('modal-fotos')">&times;</span>
+      </div>
+      <div class="draggable-body">
+        <div class="photo-grid">
+          <!-- 请在下方替换为您上传的照片路径 (建议上传约 10 张) -->
+          <img src="/src/图片素材/minji1.png" alt="photo1" referrerPolicy="no-referrer">
+          <img src="/src/图片素材/tuan1.png" alt="photo2" referrerPolicy="no-referrer">
+          <img src="/src/图片素材/dan1.png" alt="photo3" referrerPolicy="no-referrer">
+          <img src="/src/图片素材/ha1.png" alt="photo4" referrerPolicy="no-referrer">
+          <img src="/src/图片素材/hy1.png" alt="photo5" referrerPolicy="no-referrer">
+          <img src="/src/图片素材/han1.png" alt="photo6" referrerPolicy="no-referrer">
+          <img src="/src/图片素材/minji2.jpeg" alt="photo7" referrerPolicy="no-referrer">
+          <img src="/src/图片素材/tuan2.jpeg" alt="photo8" referrerPolicy="no-referrer">
+          <img src="/src/图片素材/13.png" alt="photo9" referrerPolicy="no-referrer">
+          <img src="/src/图片素材/maoshu.png" alt="photo10" referrerPolicy="no-referrer">
+          <!-- 提示：将上面的 src="https://picsum.photos/..." 替换为您的图片路径，例如 src="/src/图片素材/my_photo.png" -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 可挪动弹窗 3: Right Side Content -->
+    <div id="modal-right-side" class="draggable-modal">
+      <div class="draggable-header">
+        <span>ID Card</span>
+        <span class="close-btn-small" onclick="closeDraggableModal('modal-right-side')">&times;</span>
+      </div>
+      <div class="draggable-body">
+        <div class="rectangle-list">
+          <!-- 请在下方替换为您上传的 6 张矩形图路径 -->
+          <img src="/src/图片素材/bb.jpeg" alt="rect1" referrerPolicy="no-referrer">
+          <img src="/src/图片素材/mm.png" alt="rect2" referrerPolicy="no-referrer">
+          <img src="/src/图片素材/hh.jpeg" alt="rect3" referrerPolicy="no-referrer">
+          <img src="/src/图片素材/dd.jpeg" alt="rect4" referrerPolicy="no-referrer">
+          <img src="/src/图片素材/ha.jpeg" alt="rect5" referrerPolicy="no-referrer">
+          <img src="/src/图片素材/hy.jpeg" alt="rect6" referrerPolicy="no-referrer">
+        </div>
+      </div>
+    </div>
+
+    <!-- 可挪动弹窗 4: Top Left Content -->
+    <div id="modal-top-left" class="draggable-modal">
+      <div class="draggable-header">
+        <span>告诉我们你的本月目标！</span>
+        <span class="close-btn-small" onclick="closeDraggableModal('modal-top-left')">&times;</span>
+      </div>
+      <div class="draggable-body">
+        <p>Live free, feel light, and let joy find me.</p>
+      </div>
+    </div>
+
+    <!-- 新增的 5 个消息子弹窗 -->
+    <div id="modal-msg-1" class="draggable-modal">
+      <div class="draggable-header">
+        <span>消息 1</span>
+        <span class="close-btn-small" onclick="closeDraggableModal('modal-msg-1')">&times;</span>
+      </div>
+      <div class="draggable-body">
+        <p>Hanni</p>
+      </div>
+    </div>
+
+    <div id="modal-msg-2" class="draggable-modal">
+      <div class="draggable-header">
+        <span>消息 2</span>
+        <span class="close-btn-small" onclick="closeDraggableModal('modal-msg-2')">&times;</span>
+      </div>
+      <div class="draggable-body">
+        <p>Haerin</p>
+      </div>
+    </div>
+
+    <div id="modal-msg-3" class="draggable-modal">
+      <div class="draggable-header">
+        <span>消息 3</span>
+        <span class="close-btn-small" onclick="closeDraggableModal('modal-msg-3')">&times;</span>
+      </div>
+      <div class="draggable-body">
+        <p>Hyein</p>
+      </div>
+    </div>
+
+    <div id="modal-msg-4" class="draggable-modal">
+      <div class="draggable-header">
+        <span>消息 4</span>
+        <span class="close-btn-small" onclick="closeDraggableModal('modal-msg-4')">&times;</span>
+      </div>
+      <div class="draggable-body">
+        <p>Danielle</p>
+      </div>
+    </div>
+
+    <div id="modal-msg-5" class="draggable-modal">
+      <div class="draggable-header">
+        <span>消息 5</span>
+        <span class="close-btn-small" onclick="closeDraggableModal('modal-msg-5')">&times;</span>
+      </div>
+      <div class="draggable-body">
+        <p>Minji</p>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
