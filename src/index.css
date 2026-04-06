@@ -87,7 +87,7 @@ a, button, [onclick], .bottom-btn, .floating-img, .floating-img-top-left, .tally
 /* 底部按钮定位（核心修改：还原图一右侧独立位置） */
 .come-on-container {
   position: fixed;
-  bottom: 30vh; /* 垂直居中偏下，适配不同屏幕 */
+  bottom: 40vh; /* 垂直居中偏下，适配不同屏幕 */
   right: 15vw; /* 右侧固定距离，替代绝对像素 */
   z-index: 100;
   /* 移除多余的 translateX(-50%)，避免居中偏移 */
@@ -96,27 +96,27 @@ a, button, [onclick], .bottom-btn, .floating-img, .floating-img-top-left, .tally
 .messages-container {
   position: fixed;
   top: 17px;
-  right: 15vw; /* 与按钮同右侧对齐 */
+  right: 10vw; /* 与按钮同右侧对齐 */
   z-index: 100;
 }
 
 .fotos-container {
   position: fixed;
   top: 17px;
-  right: 8vw; /* 与messages保持固定间距 */
+  right: 5vw; /* 与messages保持固定间距 */
   z-index: 100;
 }
 
 /* 左上角浮动图片样式 */
 .top-left-float-container {
   position: fixed;
-  left: 15px;
-  top: 30px;
+  left: 18px;
+  top: 33px;
   z-index: 100;
 }
 
 .floating-img-top-left {
-  max-width: 270px;
+  max-width: 300px;
   height: auto;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -160,7 +160,7 @@ a, button, [onclick], .bottom-btn, .floating-img, .floating-img-top-left, .tally
 }
 
 .tally-img {
-  height: 60px; /* 调整图片高度 */
+  height: 100px; /* 调整图片高度 */
   width: auto;
   display: block;
 }
@@ -357,8 +357,8 @@ a, button, [onclick], .bottom-btn, .floating-img, .floating-img-top-left, .tally
 /* 右侧装饰图片样式（修正笔误+优化定位） */
 .right-side-container {
   position: fixed;
-  right: 55px;
-  top: 150px;
+  right: 50px;
+  top: 190px;
   height: auto; /* 修正原代码笔误 anto → auto */
   z-index: 50;
   pointer-events: none;
@@ -366,7 +366,7 @@ a, button, [onclick], .bottom-btn, .floating-img, .floating-img-top-left, .tally
 
 .right-side-img {
   height: auto;
-  max-width:480px;
+  max-width:530px;
   object-fit: cover;
 }
 
@@ -388,14 +388,14 @@ a, button, [onclick], .bottom-btn, .floating-img, .floating-img-top-left, .tally
 /* 右侧浮动图片样式 */
 .right-float-container {
   position: fixed;
-  right: 550px;
+  right: 600px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 100;
 }
 
 .floating-img {
-  max-width: 280px;
+  max-width: 380px;
   height: auto;
   cursor: pointer;
   transition: transform 0.3s ease;
