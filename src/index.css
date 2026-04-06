@@ -160,7 +160,7 @@ a, button, [onclick], .bottom-btn, .floating-img, .floating-img-top-left, .tally
 }
 
 .tally-img {
-  height: 60px; /* 调整图片高度 */
+  height: 50px; /* 调整图片高度 */
   width: auto;
   display: block;
 }
