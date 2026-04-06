@@ -88,7 +88,7 @@ a, button, [onclick], .bottom-btn, .floating-img, .floating-img-top-left, .tally
 .come-on-container {
   position: fixed;
   bottom: 40vh; /* 垂直居中偏下，适配不同屏幕 */
-  right: 15vw; /* 右侧固定距离，替代绝对像素 */
+  right: 13vw; /* 右侧固定距离，替代绝对像素 */
   z-index: 100;
   /* 移除多余的 translateX(-50%)，避免居中偏移 */
 }
@@ -103,7 +103,7 @@ a, button, [onclick], .bottom-btn, .floating-img, .floating-img-top-left, .tally
 .fotos-container {
   position: fixed;
   top: 17px;
-  right: 5vw; /* 与messages保持固定间距 */
+  right: 2vw; /* 与messages保持固定间距 */
   z-index: 100;
 }
 
@@ -160,9 +160,15 @@ a, button, [onclick], .bottom-btn, .floating-img, .floating-img-top-left, .tally
 }
 
 .tally-img {
-  height: 100px; /* 调整图片高度 */
+  height: 60px; /* 调整图片高度 */
   width: auto;
   display: block;
+}
+/* 控制顶部 Messages + Photos 图标大小 */
+.messages-container img,
+.fotos-container img {
+  width: 7px;   /* 改这里！调大小 */
+  height: auto;
 }
 
 /* 可挪动弹窗样式 */
@@ -388,7 +394,7 @@ a, button, [onclick], .bottom-btn, .floating-img, .floating-img-top-left, .tally
 /* 右侧浮动图片样式 */
 .right-float-container {
   position: fixed;
-  right: 600px;
+  right: 610px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 100;
