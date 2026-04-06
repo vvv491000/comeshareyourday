@@ -84,26 +84,26 @@ a, button, [onclick], .bottom-btn, .floating-img, .floating-img-top-left, .tally
   }
 }
 
-/* 底部按钮定位 */
+/* 底部按钮定位（核心修改：还原图一右侧独立位置） */
 .come-on-container {
   position: fixed;
-  bottom: 200px;
-  left: 900px;
+  bottom: 30vh; /* 垂直居中偏下，适配不同屏幕 */
+  right: 15vw; /* 右侧固定距离，替代绝对像素 */
   z-index: 100;
-  transform: translateX(-50%); /* 确保按钮也居中对齐坐标 */
+  /* 移除多余的 translateX(-50%)，避免居中偏移 */
 }
 
 .messages-container {
   position: fixed;
   top: 17px;
-  left: 1010px;
+  right: 15vw; /* 与按钮同右侧对齐 */
   z-index: 100;
 }
 
 .fotos-container {
   position: fixed;
   top: 17px;
-  left: 1080px;
+  right: 8vw; /* 与messages保持固定间距 */
   z-index: 100;
 }
 
@@ -354,12 +354,12 @@ a, button, [onclick], .bottom-btn, .floating-img, .floating-img-top-left, .tally
   object-fit: cover;
 }
 
-/* 右侧装饰图片样式 */
+/* 右侧装饰图片样式（修正笔误+优化定位） */
 .right-side-container {
   position: fixed;
   right: 55px;
   top: 150px;
-  height: anto;
+  height: auto; /* 修正原代码笔误 anto → auto */
   z-index: 50;
   pointer-events: none;
 }
@@ -460,5 +460,17 @@ a, button, [onclick], .bottom-btn, .floating-img, .floating-img-top-left, .tally
 @media (max-width: 768px) {
   .page {
     padding: 10px;
+  }
+  /* 移动端适配：调整按钮和图标位置 */
+  .come-on-container {
+    bottom: 20vh;
+    right: 10vw;
+  }
+  .messages-container, .fotos-container {
+    top: 10px;
+    right: 10vw;
+  }
+  .fotos-container {
+    right: 2vw;
   }
 }
